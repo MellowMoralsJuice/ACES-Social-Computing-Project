@@ -1,0 +1,5 @@
+dist
+node_modules
+.localdb
+backups
+package-lock.json

@@ -1,0 +1,10 @@
+{
+  "name": "Gym Glasses",
+  "short_name": "Gym Glasses",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0f17",
+  "theme_color": "#0b0f17",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

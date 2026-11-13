@@ -1,0 +1,52 @@
+{
+  "name": "ar-gym-newcomer-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Phone-as-AR-glasses prototype for gym newcomers: breadcrumbs that go stale, text and audio tips, votes, thank-you notes, decay, in a smart-glasses view.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:https": "vite --host --mode https",
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.server.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "db:setup": "tsx db/migrate.ts && tsx db/seed.ts",
+    "db:migrate": "tsx db/migrate.ts",
+    "db:seed": "tsx db/seed.ts",
+    "db:reseed": "tsx db/seed.ts --restore",
+    "db:reset": "tsx db/reset.ts",
+    "audio:generate": "bash scripts/generate-audio.sh",
+    "db:backup": "tsx scripts/backup.ts",
+    "db:local:reset": "node -e \"import('node:fs').then(f=>f.rmSync('.localdb',{recursive:true,force:true}))\""
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
+    "postgres": "^4.1.0",
+    "qrcode-generator": "^2.0.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-basic-ssl": "^2.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2",
+    "vite": "^8.3.7",
+    "vitest": "^5.1.0"
+  }
+}
